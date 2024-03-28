@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import ProductAll from "./page/ProductAll";
 import Login from "./page/Login";
 import ProductDetail from "./page/ProductDetail";
+import PrivateRoute from "./route/PrivateRoute";
 import Navbar from "./component/Navbar";
 import { useEffect, useState } from "react";
 
@@ -36,7 +37,10 @@ function App() {
           path="/login"
           element={<Login setAuthenticate={setAuthenticate} />}
         />
-        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route
+          path="/product/:id"
+          element={<PrivateRoute authenticate={authenticate} />}
+        />
       </Routes>
     </div>
   );
