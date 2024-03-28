@@ -5,6 +5,7 @@ import ProductAll from "./page/ProductAll";
 import Login from "./page/Login";
 import ProductDetail from "./page/ProductDetail";
 import Navbar from "./component/Navbar";
+import { useEffect, useState } from "react";
 
 /* 
 로직정의
@@ -21,12 +22,20 @@ import Navbar from "./component/Navbar";
 */
 
 function App() {
+  // true면 로그인, false면 로그인 안됨
+  const [authenticate, setAuthenticate] = useState(false);
+  useEffect(() => {
+    console.log("aaa", authenticate);
+  }, [authenticate]);
   return (
     <div>
       <Navbar />
       <Routes>
         <Route path="/" element={<ProductAll />} />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/login"
+          element={<Login setAuthenticate={setAuthenticate} />}
+        />
         <Route path="/product/:id" element={<ProductDetail />} />
       </Routes>
     </div>
