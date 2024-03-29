@@ -4,6 +4,12 @@
   margin: 20px;
   cursor: pointer;
 }
+
+.nav-header * {
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
 .login-text {
   margin-left: 10px;
 }
@@ -22,26 +28,104 @@
 .nav-section {
   display: flex;
   justify-content: center;
+  cursor: pointer;
 }
-.menu-list {
+.menu {
   display: flex;
   list-style-type: none;
+  padding: 20px;
 }
-.menu-list li {
+.menu li a {
+  text-decoration: none;
+  color: black;
+  margin-bottom: 20px;
   padding: 10px;
 }
-.menu-area {
+.nav-menu-area {
   display: flex;
   justify-content: center;
 }
-.search-input {
-  border: 2px solid brown;
+.burger-menu {
+  margin-left: 20px;
+}
+.search-box {
+  border-bottom: 1px solid black;
+  position: absolute;
+  right: 20px;
+  padding: 5px;
+}
+.search-box input {
+  border: none;
+  margin-left: 5px;
+}
+.search-box input:focus {
+  outline: none;
+}
+.card {
+  border: none !important;
+  margin-bottom: 10px;
 }
 .product-img {
-  width: 50vh;
   cursor: pointer;
   transition: all 0.1s linear;
 }
 .product-img:hover {
   transform: scale(1.1);
+}
+.product-img {
+  display: flex;
+  justify-content: flex-end;
+}
+.hide {
+  visibility: hidden;
+}
+
+@media screen and (max-width: 63rem) {
+  .hide {
+    visibility: visible;
+  }
+  .menu {
+    display: none;
+  }
+  .search-box {
+    display: none;
+  }
+}
+
+.side-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: burlywood;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  z-index: 2;
+}
+.side-menu button {
+  margin: 5px;
+  border: none;
+  background: none;
+  width: 120px;
+}
+.side-menu .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  border: none;
+  background: none;
+}
+.side-menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.side-menu-list button:hover {
+  background-color: beige;
+  border-radius: 3px;
 }
