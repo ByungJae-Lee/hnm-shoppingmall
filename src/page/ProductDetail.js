@@ -25,7 +25,7 @@ const ProductDetail = () => {
         <Col className="product-img">
           <img src={product?.img} />
         </Col>
-        <Col>
+        <Col className="product-box">
           <div>{product?.title}</div>
           <div>₩{product?.price}</div>
           <div>{product?.choice === true ? "Conscious choice" : ""}</div>

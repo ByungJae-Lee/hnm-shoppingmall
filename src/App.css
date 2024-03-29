@@ -8,6 +8,8 @@
 .nav-header * {
   margin-right: 10px;
   margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .login-text {
@@ -65,6 +67,14 @@
   border: none !important;
   margin-bottom: 10px;
 }
+.product-box div {
+  padding: 10px;
+}
+.add-button {
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 100%;
+}
 .product-img {
   cursor: pointer;
   transition: all 0.1s linear;
@@ -72,10 +82,10 @@
 .product-img:hover {
   transform: scale(1.1);
 }
-.product-img {
+/* .product-img {
   display: flex;
   justify-content: flex-end;
-}
+} */
 .hide {
   visibility: hidden;
 }
