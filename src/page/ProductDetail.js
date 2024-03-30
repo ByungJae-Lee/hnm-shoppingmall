@@ -10,7 +10,7 @@ const ProductDetail = () => {
   let { id } = useParams();
   const getProductDetail = async () => {
     setLoading(true);
-    let url = `http://localhost:5000/products/${id}`;
+    let url = `https://my-json-server.typicode.com/ByungJae-Lee/hnm-shoppingmall/products/${id}`;
     let response = await fetch(url);
     let data = await response.json();
     console.log(data);
@@ -22,12 +22,12 @@ const ProductDetail = () => {
   return (
     <Container>
       <Row>
-        <Col className="">
+        <Col>
           <img src={product?.img} />
         </Col>
         <Col className="product-box">
           <div>{product?.title}</div>
-          <div>₩{product?.price}</div>
+          <div>₩ {product?.price}</div>
           <div>{product?.choice === true ? "Conscious choice" : ""}</div>
           <Dropdown className="drop-down">
             <Dropdown.Toggle variant="outline-dark" id="dropdown-basic">

@@ -5,7 +5,7 @@ import { useSearchParams } from "react-router-dom";
 
 const ProductAll = () => {
   const [productList, setProductList] = useState([]);
-  const [query, searchQuery] = useSearchParams();
+  const [query, setQuery] = useSearchParams();
   const getProducts = async () => {
     let searchQuery = query.get("q") || "";
     console.log("쿼리값은?", searchQuery);
