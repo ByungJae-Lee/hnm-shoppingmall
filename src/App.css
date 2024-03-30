@@ -82,6 +82,11 @@
 .product-img:hover {
   transform: scale(1.1);
 }
+.detail-img {
+  width: 75%;
+  height: 95%;
+  margin-left: 140px;
+}
 /* .product-img {
   display: flex;
   justify-content: flex-end;
