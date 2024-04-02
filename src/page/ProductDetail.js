@@ -1,21 +1,19 @@
 import React, { useEffect } from "react";
 import { Container, Col, Row, Button, Dropdown } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+// import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { productAction } from "../redux/actions/productAction";
 
 const ProductDetail = () => {
-  const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  let { id } = useParams();
+  const product = useSelector((state) => state.product.selectItem);
+  const dispatch = useDispatch();
   const getProductDetail = async () => {
-    setLoading(true);
-    let url = `https://my-json-server.typicode.com/ByungJae-Lee/hnm-shoppingmall/products/${id}`;
-    let response = await fetch(url);
-    let data = await response.json();
-    console.log(data);
-    setProduct(data);
+    dispatch(productAction.getProductDetail(id));
   };
+  // const [loading, setLoading] = useState(false);
+  // const [error, setError] = useState("");
+  let { id } = useParams();
   useEffect(() => {
     getProductDetail();
   }, []);

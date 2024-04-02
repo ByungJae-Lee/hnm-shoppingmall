@@ -3,8 +3,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { authenticateAction } from "../redux/actions/authenticateAction";
+import { authenticateReducer } from "../redux/reducers/authenticateReducer";
 
 const Navbar = ({ authenticate, setAuthenticate }) => {
+  // const authenticate = useSelector((state) => state.auth.authenticate);
+  // const dispatch = useDispatch();
+  // const setAuthenticate = () => {
+  //   dispatch((authenticate = false));
+  //   navigate("/");
+  // };
   const menuList = [
     "여성",
     "Divided",
@@ -16,11 +25,11 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
     "지속가능성",
   ];
   let [width, setWidth] = useState(0);
-  const navigate = useNavigate();
+  let navigate = useNavigate();
 
-  const goToLogin = () => {
-    navigate("/login");
-  };
+  // const goToLogin = () => {
+  //   navigate("/login");
+  // };
   const goHome = () => {
     navigate("/");
   };

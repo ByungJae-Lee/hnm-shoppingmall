@@ -23,7 +23,7 @@ const Login = ({ setAuthenticate, to }) => {
           <Form.Control
             type="text"
             placeholder="ID"
-            onChange={(event) => setId(event.target.valueAsDate)}
+            onChange={(event) => setId(event.target.value)}
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formGroupPassword">

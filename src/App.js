@@ -3,10 +3,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
 import ProductAll from "./page/ProductAll";
 import Login from "./page/Login";
-import ProductDetail from "./page/ProductDetail";
+// import ProductDetail from "./page/ProductDetail";
 import PrivateRoute from "./route/PrivateRoute";
 import Navbar from "./component/Navbar";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+// import { useEffect, useState } from "react";
 
 /* 
 로직정의
@@ -24,23 +25,17 @@ import { useEffect, useState } from "react";
 
 function App() {
   // true면 로그인, false면 로그인 안됨
-  const [authenticate, setAuthenticate] = useState(false);
-  useEffect(() => {
-    console.log("aaa", authenticate);
-  }, [authenticate]);
+  // const [authenticate, setAuthenticate] = useState(false);
+  // useEffect(() => {
+  //   console.log("aaa", authenticate);
+  // }, [authenticate]);
   return (
     <div>
-      <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate} />
+      <Navbar />
       <Routes>
         <Route path="/" element={<ProductAll />} />
-        <Route
-          path="/login"
-          element={<Login setAuthenticate={setAuthenticate} />}
-        />
-        <Route
-          path="/product/:id"
-          element={<PrivateRoute authenticate={authenticate} />}
-        />
+        <Route path="/login" element={<Login />} />
+        <Route path="/product/:id" element={<PrivateRoute />} />
       </Routes>
     </div>
   );
