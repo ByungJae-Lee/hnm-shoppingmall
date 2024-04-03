@@ -19,6 +19,15 @@ export const fetchProducts = createAsyncThunk(
     }
   }
 );
+
+export const fetchProductDetail = createAsyncThunk(
+  "product/fetchDetail ",
+  async (id) => {
+    let url = `https://my-json-server.typicode.com/ByungJae-Lee/hnm-shoppingmall/products/${id}`;
+    let response = await fetch(url);
+    return await response.json();
+  }
+);
 /*
 구버전 redux
 function productReducer(state = initialState, action) {
@@ -42,9 +51,9 @@ const productSlice = createSlice({
     // getAllProducts(state, action) {
     //   state.productList = action.payload.data;
     // },
-    getSingleProduct(state, action) {
-      state.selectItem = action.payload.data;
-    },
+    // getSingleProduct(state, action) {
+    //   state.selectItem = action.payload.data;
+    // },
   },
   extraReducers: (builder) => {
     builder
@@ -58,11 +67,20 @@ const productSlice = createSlice({
       .addCase(fetchProducts.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
+      })
+      .addCase(fetchProductDetail.pending, (state) => {
+        state.isLoading = false;
+      })
+      .addCase(fetchProductDetail.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.selectItem = action.payload;
+      })
+      .addCase(fetchProductDetail.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
       });
   },
 });
-
-console.log("pppp", productSlice);
 
 export const productActions = productSlice.actions;
 export default productSlice.reducer;

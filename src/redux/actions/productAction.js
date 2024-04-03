@@ -10,6 +10,7 @@ import { productActions } from "../reducers/productSlice";
 //   };
 // }
 
+/*
 function getProductDetail(id) {
   return async (dispatch) => {
     let url = `https://my-json-server.typicode.com/ByungJae-Lee/hnm-shoppingmall/products/${id}`;
@@ -19,3 +20,4 @@ function getProductDetail(id) {
   };
 }
 export const productAction = { getProductDetail };
+*/
