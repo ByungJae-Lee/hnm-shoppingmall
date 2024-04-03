@@ -83,9 +83,8 @@
   transform: scale(1.1);
 }
 .detail-img {
-  width: 500px;
-  height: 600px;
-  /* margin-left: 140px; */
+  display: flex;
+  justify-content: flex-end;
 }
 /* .product-img {
   display: flex;

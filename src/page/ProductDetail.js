@@ -20,9 +20,10 @@ const ProductDetail = () => {
   return (
     <Container>
       <Row>
-        <Col>
-          <img src={product?.img} className="detail-img" />
+        <Col className="detail-img">
+          <img src={product?.img} />
         </Col>
+
         <Col className="product-box">
           <div>{product?.title}</div>
           <div>₩ {product?.price}</div>
