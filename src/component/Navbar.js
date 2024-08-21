@@ -13,6 +13,7 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
   // const setAuthenticate = () => {
   //   dispatch((authenticate = false));
   //   navigate("/");
+  //
   // };
   const menuList = [
     "여성",
